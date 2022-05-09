@@ -1,0 +1,494 @@
+@font-face {
+    font-family: "septima";
+    src: url("/asset/Septima.otf"),
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    line-height: 1.25;
+}
+
+ul,li{
+    text-decoration: none;
+    list-style-type:none;
+}
+
+body{
+    width: 100vw;
+    height: auto;
+    overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    cursor: default;
+    /* overflow: scroll; */
+    /* background-image: url(asset/1.jpg);
+    background-size: cover; */
+    /* overflow-y: hidden; */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.container{
+    padding-top: 1.5em;
+    padding-left: 1.5em;
+    width: auto;
+    height: auto;
+}
+
+.about{
+    position: fixed;
+    left: 1.5em;
+    top: 0;
+    padding-top: 1.75em;
+    z-index: 1011;
+    /* margin-bottom: 0.75em; */
+    text-transform:capitalize;
+    /* border-bottom: 0.85pt dashed  black; */
+    text-decoration: 0.85pt underline dashed  black;
+    cursor: pointer;
+}
+.aboutContainer{
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1011;
+}
+.aboutText{
+    padding: 1.25em;
+    max-width: 85vw;
+    /* background-color: white; */
+    /* background-color: black;
+    color: white; */
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.aboutText p{
+    width: fit-content;
+    background-color: white;
+}
+
+.navigation{
+    position: sticky;
+    left: 1.5em;
+    width: 11.25em;
+    z-index: 1005;
+    /* margin-bottom: 1.5em; */
+    background-color: white;
+}
+.showTitle{
+    padding-top: 5em;
+    position: fixed;
+    left: 1.5em;
+    background-color: white;
+    padding-bottom: 0.5em;
+    z-index: 1005;
+    margin-top: -1.75em;
+}
+.descrips{
+    position: relative;
+    top: 12em;
+}
+.tag{
+    width: fit-content;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+}
+.tag:hover{
+    /* border-bottom: 0.85pt dashed  black; */
+    text-decoration: 0.85pt underline dashed  black;
+}
+
+.calendarWrap{
+    position:absolute;
+    top: 1.75em;
+    padding-left: 12.75em;
+    width: auto;
+    height: auto;
+    padding-top: 2.75em;
+    /* padding-bottom: 1.5em; */
+}
+
+.calendarContainer{
+    display:flex;
+    padding-bottom: 1.5em;
+}
+.row:last-child{
+    /* padding-right: 0.2em; */
+}
+
+.row{
+    flex: 0 0 13em;
+    /* min-height: 10vh; */
+    min-height: 85vh;
+    margin-bottom: 1.2em;
+}
+
+.date{
+    font-family: Arial Narrow;
+}
+
+.dateTitle{
+    position: sticky;
+    top: 4.5em;
+    z-index: 1000;
+}
+
+.title{
+    padding-top: 1.25em;
+}
+
+.content{
+    position: absolute;
+    width: 13em;
+    top: 11.75em;
+}
+
+.audio, .ambient, .image, .video{
+    position: absolute;
+    cursor: pointer;
+}
+
+.sudo{
+    cursor: default
+}
+
+#wen11image{
+    top: 0;
+}
+
+#wen11audio{
+    top: 12.5em;
+}
+#wen11ambient{
+    top: 25em;
+}
+#wen11video{
+    top: 45em;
+}
+
+.imgContainer{
+    margin-top: 0.45em;
+    position: relative;
+    width: 100.5%;
+    height: auto;
+    min-height: 8.5em;
+    min-width: 13.065em;
+    background:
+        linear-gradient(to right, black 0.85px, transparent 0.85px) 0 0,
+        linear-gradient(to right, black 0.85px, transparent 0.85px) 0 100%,
+        linear-gradient(to left, black 0.85px, transparent 0.85px) 100% 0,
+        linear-gradient(to left, black 0.85px, transparent 0.85px) 100% 100%,
+        linear-gradient(to bottom, black 0.85px, transparent 0.85px) 0 0,
+        linear-gradient(to bottom, black 0.85px, transparent 0.85px) 100% 0,
+        linear-gradient(to top, black 0.85px, transparent 0.85px) 0 100%,
+        linear-gradient(to top, black 0.85px, transparent 0.85px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    margin-left: -15px;
+}
+
+img, video{
+    padding: 1em;
+    display: block;
+    max-width: 85%;
+    margin: auto;
+  /* margin-right: auto; */
+}
+
+.vdContainer{
+    margin-top: 0.3em;
+    position: relative;
+    width: 100.5%;
+    min-height: 3em;
+    height: auto;
+    background-image:
+        repeating-linear-gradient(0deg, black, black 12px, transparent 12px, transparent 18px),/*left*/
+        repeating-linear-gradient(90deg, black, black 12px, transparent 12px, transparent 18px), /*top*/
+        repeating-linear-gradient(180deg, black, black 12px, transparent 12px, transparent 18px), /*right*/
+        repeating-linear-gradient(270deg, black, black 12px, transparent 12px, transparent 18px); /*bottom*/
+        background-position:  0 0, 0 0, 100% 0, 0 100%;
+    background-size: 0.85px 100%, 100% 0px, 0.85px 100% , 100% 0px;
+    background-repeat: no-repeat;
+    margin-left: -15px;
+    /* margin-right: -5px; */
+}
+
+.vdContainer video{
+    padding: 1em;
+    display: block;
+    max-width: 85%;
+    margin: auto;
+}
+
+.today{
+    position: sticky;
+    margin-top: -2.75em;
+    top: 1.75em;
+    /* left: 14.25em; */
+    z-index: 1000;
+}
+
+.hidden{
+    opacity: 0;
+}
+
+.notShown{
+    display: none;
+}
+
+.navBg{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 13em;
+    height: 100vh;
+    background-color: white;
+    z-index: 1001;
+}
+
+.topBg{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 13em;
+    height: 11.25em;
+    background-color: white;
+    z-index: 1004;
+}
+
+.calBg{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 11.25em;
+    background-color: white;
+    z-index: 999;
+}
+
+.content div:last-child {
+    margin-bottom: 1.5em;
+}
+
+.contentBG{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: red; */
+    z-index: 1010;
+}
+.contentDetail{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 85vw;
+    /* background-color: white; */
+    /* max-height: 65%; */
+}
+
+.bigDes{
+    margin-top: 0.75em;
+    text-align: center;
+    max-width: 85vw;
+    min-width: 35vw;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+    width: fit-content;
+}
+.ambient, .audio{
+    width: fit-content;
+    /* background-color: white; */
+}
+
+.bigImg, .bigVideo{
+    /* position:absolute; */
+    object-fit: cover;
+    padding: 1.25em;
+    min-width: 60%;
+    max-width: 90%;
+    margin: auto;
+}
+.bigimgContainer{
+    /* margin-top: 0.45em; */
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    min-width: 60%;
+    max-width: 85%;
+    height: auto;
+    /* min-height: 7em; */
+    background:
+        linear-gradient(to right, black 0.85px, transparent 0.85px) 0 0,
+        linear-gradient(to right, black 0.85px, transparent 0.85px) 0 100%,
+        linear-gradient(to left, black 0.85px, transparent 0.85px) 100% 0,
+        linear-gradient(to left, black 0.85px, transparent 0.85px) 100% 100%,
+        linear-gradient(to bottom, black 0.85px, transparent 0.85px) 0 0,
+        linear-gradient(to bottom, black 0.85px, transparent 0.85px) 100% 0,
+        linear-gradient(to top, black 0.85px, transparent 0.85px) 0 100%,
+        linear-gradient(to top, black 0.85px, transparent 0.85px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    /* margin-left: -15px; */
+}
+.bigvdContainer{
+    /* margin-top: 0.3em; */
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    /* width: 100%; */
+    min-width: 60%;
+    max-width: 85%;
+    height: auto;
+    /* height: fit-content; */
+    background-image:
+        repeating-linear-gradient(0deg, black, black 12px, transparent 12px, transparent 18px),/*left*/
+        repeating-linear-gradient(90deg, black, black 12px, transparent 12px, transparent 18px), /*top*/
+        repeating-linear-gradient(180deg, black, black 12px, transparent 12px, transparent 18px), /*right*/
+        repeating-linear-gradient(270deg, black, black 12px, transparent 12px, transparent 18px); /*bottom*/
+        background-position:  0 0, 0 0, 100% 0, 0 100%;
+    background-size: 0.85px 100%, 100% 0px, 0.85px 100% , 100% 0px;
+    background-repeat: no-repeat;
+    /* margin-left: -15px; */
+    /* margin-right: -5px; */
+}
+
+.tag{
+    font-family: Arial Narrow;
+}
+
+.tagText1{
+    position: absolute;
+    top: 0;
+}
+.tagText2{
+    position: absolute;
+    top: 1.25em;
+}
+.tagText3{
+    position: absolute;
+    top: 2.5em;
+}
+.tagText4{
+    position: absolute;
+    top: 3.75em;
+}
+.tagText5{
+    position: absolute;
+    top: 5em;
+}
+.tagText6{
+    position: absolute;
+    top: 6.25em;
+}
+.tagText7{
+    position: absolute;
+    top: 7.5em;
+}
+.tagText8{
+    position: absolute;
+    top: 8.75em;
+}
+.tagText9{
+    position: absolute;
+    top: 10em;
+}
+.tagText10{
+    position: absolute;
+    top: 11.25em;
+}
+.tagText11{
+    position: absolute;
+    top: 12.5em;
+}
+.tagText12{
+    position: absolute;
+    top: 13.75em;
+}
+.tagText13{
+    position: absolute;
+    top: 15em;
+}
+.tagText14{
+    position: absolute;
+    top: 16.25em;
+}
+.tagText15{
+    position: absolute;
+    top: 17.5em;
+}
+.tagText16{
+    position: absolute;
+    top: 18.75em;
+}
+.tagText17{
+    position: absolute;
+    top: 20em;
+}
+.tagText18{
+    position: absolute;
+    top: 21.25em;
+}
+.tagText19{
+    position: absolute;
+    top: 22.5em;
+}
+.tagText20{
+    position: absolute;
+    top: 23.75em;
+}
+.tagText21{
+    position: absolute;
+    top: 25em;
+}
+.tagText22{
+    position: absolute;
+    top: 26.25em;
+}
+.tagText23{
+    position: absolute;
+    top: 27.5em;
+}
+.tagText24{
+    position: absolute;
+    top: 28.75em;
+}
+.tagText25{
+    position: absolute;
+    top: 30em;
+}
+.tagText26{
+    position: absolute;
+    top: 31.25em;
+}
+.tagText27{
+    position: absolute;
+    top: 32.5em;
+}
+.tagText28{
+    position: absolute;
+    top: 33.75em;
+}
+.tagText29{
+    position: absolute;
+    top: 35em;
+}
